@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://big4wcdubl1al"]
+
+[ext_resource type="Script" path="res://scenes/main_menu/main_menu.gd" id="1_ye3dr"]
+[ext_resource type="PackedScene" uid="uid://3xcdde7ev3t8" path="res://scenes/player/player.tscn" id="2_3fmao"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_ye3dr")
+player_scene = ExtResource("2_3fmao")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="CenterContainer" type="CenterContainer" parent="Camera2D/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/CanvasLayer/CenterContainer"]
+layout_mode = 2
+
+[node name="Host" type="Button" parent="Camera2D/CanvasLayer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "HOST"
+
+[node name="Join" type="Button" parent="Camera2D/CanvasLayer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "JOIN"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://scenes/player/player.tscn")
+spawn_path = NodePath("..")
+
+[connection signal="pressed" from="Camera2D/CanvasLayer/CenterContainer/VBoxContainer/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Camera2D/CanvasLayer/CenterContainer/VBoxContainer/Join" to="." method="_on_join_pressed"]
