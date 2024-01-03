@@ -31,9 +31,15 @@ text = "HOST"
 layout_mode = 2
 text = "JOIN"
 
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+[node name="PlayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://scenes/player/player.tscn")
 spawn_path = NodePath("..")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("res://scenes/world/world.tscn")
+spawn_path = NodePath("..")
+
+[node name="Level" type="Node" parent="."]
 
 [connection signal="pressed" from="Camera2D/CanvasLayer/CenterContainer/VBoxContainer/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/CenterContainer/VBoxContainer/Join" to="." method="_on_join_pressed"]
