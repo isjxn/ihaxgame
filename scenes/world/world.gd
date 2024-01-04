@@ -13,9 +13,7 @@ func _process(delta):
 	pass
 
 
-func on_spawn_player(id):
-	print("SPAWN")
-	print(id)
+func spawn_player(id):
 	var player = player_scene.instantiate()
 	player.name = str(id)
 	call_deferred("add_child", player)

@@ -22,7 +22,7 @@ func _on_join_pressed():
 
 
 func add_player(id = 1):
-		scene.on_spawn_player(id)
+		scene.spawn_player(id)
 
 
 func exit_game(id):
