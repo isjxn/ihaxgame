@@ -29,6 +29,7 @@ func _process(_delta):
 		
 		if velocity == Vector2(0, 0):
 			action = "idle"
+			looking = "front"
 		else:
 			action = "walk"
 			if velocity.x > 0:

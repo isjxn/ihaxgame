@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://big4wcdubl1al"]
+[gd_scene load_steps=4 format=3 uid="uid://big4wcdubl1al"]
 
 [ext_resource type="Script" path="res://scenes/main/main.gd" id="1_ye3dr"]
 [ext_resource type="PackedScene" uid="uid://3xcdde7ev3t8" path="res://scenes/player/player.tscn" id="2_3fmao"]
+[ext_resource type="PackedScene" uid="uid://c0cgdjvm25xox" path="res://scenes/world/world.tscn" id="3_rk5mw"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ye3dr")
@@ -35,11 +36,10 @@ text = "JOIN"
 _spawnable_scenes = PackedStringArray("res://scenes/player/player.tscn")
 spawn_path = NodePath("..")
 
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://scenes/world/world.tscn")
-spawn_path = NodePath("..")
-
 [node name="Level" type="Node" parent="."]
+
+[node name="World" parent="Level" instance=ExtResource("3_rk5mw")]
+visible = false
 
 [connection signal="pressed" from="Camera2D/CanvasLayer/CenterContainer/VBoxContainer/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/CenterContainer/VBoxContainer/Join" to="." method="_on_join_pressed"]
