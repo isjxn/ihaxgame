@@ -591,3 +591,8 @@ layer_0/tile_data = PackedInt32Array(0, 1114112, 17, 65536, 1114112, 17, 131072,
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://scenes/player/player.tscn")
 spawn_path = NodePath("..")
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(588, 299)
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
