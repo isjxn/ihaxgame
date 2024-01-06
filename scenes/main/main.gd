@@ -28,6 +28,7 @@ func create_server():
 	peer.create_server(123)
 	multiplayer.multiplayer_peer = peer
 	multiplayer.peer_connected.connect(add_player)
+	multiplayer.peer_disconnected.connect(del_player)
 	print("Server created")
 
 func add_player(id = 1):
@@ -45,7 +46,7 @@ func del_player(id):
 
 
 @rpc("any_peer", "call_local") func _del_player(id):
-	get_node(str(id)).queue_free()
+	scene.get_node(str(id)).queue_free()
 
 
 func hideUi():
