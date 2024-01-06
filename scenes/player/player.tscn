@@ -617,6 +617,9 @@ properties/0/replication_mode = 2
 properties/1/path = NodePath("AnimatedSprite2D:animation")
 properties/1/spawn = true
 properties/1/replication_mode = 2
+properties/2/path = NodePath("UsernameLabel:text")
+properties/2/spawn = true
+properties/2/replication_mode = 2
 
 [node name="Player" type="CharacterBody2D" groups=["players"]]
 z_index = 1
@@ -637,3 +640,18 @@ position_smoothing_enabled = true
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_ho88c")
+
+[node name="UsernameLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.4
+offset_top = -15.0
+offset_right = 33.6
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+horizontal_alignment = 1

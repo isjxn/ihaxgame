@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var cam = $Camera2D
 @onready var animatedSprite = $AnimatedSprite2D
+@onready var usernameLabel = $UsernameLabel
 
 var action = "idle"
 var looking = "front"
@@ -43,3 +44,8 @@ func _process(_delta):
 				looking = "back"
 		
 		animatedSprite.play(action + "_" + looking + "_" + direction)
+
+
+func setUsername(username):
+	if username != "Anonymous":
+		$UsernameLabel.text = username

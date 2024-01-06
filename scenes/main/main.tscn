@@ -35,5 +35,10 @@ text = "127.0.0.1"
 placeholder_text = "IP Address"
 expand_to_text_length = true
 
+[node name="Username" type="LineEdit" parent="Camera2D/CanvasLayer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Username"
+expand_to_text_length = true
+
 [connection signal="pressed" from="Camera2D/CanvasLayer/CenterContainer/VBoxContainer/Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/CenterContainer/VBoxContainer/Join" to="." method="_on_join_pressed"]

@@ -4,9 +4,10 @@ extends Node2D
 
 @onready var spawnPoint = $SpawnPoint
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,6 +18,13 @@ func _process(delta):
 func _on_child_entered_tree(node):
 	if node.is_in_group("players"):
 		node.position = spawnPoint.position
+		sync_usernames()
+
+
+func sync_usernames():
+	for playerId in PlayerManager.players:
+		if has_node(str(playerId)):
+			get_node(str(playerId)).setUsername(PlayerManager.players[playerId].username)
 
 
 func spawn_player(id):
