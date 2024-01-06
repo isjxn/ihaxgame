@@ -21,7 +21,7 @@ func _ready():
 
 func _physics_process(_delta):
 	if is_multiplayer_authority():
-		velocity = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") * SPEED
+		velocity = Input.get_vector("left", "right", "up", "down") * SPEED
 
 
 func _process(_delta):
