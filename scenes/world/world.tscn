@@ -2348,6 +2348,6 @@ _spawnable_scenes = PackedStringArray("res://scenes/player/player.tscn")
 spawn_path = NodePath("..")
 
 [node name="SpawnPoint" type="Marker2D" parent="."]
-position = Vector2(55, 34)
+position = Vector2(564, 332)
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
